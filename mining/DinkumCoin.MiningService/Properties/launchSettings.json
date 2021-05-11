@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "DinkumCoin.MiningService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

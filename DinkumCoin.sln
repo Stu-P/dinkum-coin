@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blockchain", "blockchain", "{8CDEEC65-96F9-4FCA-8AD1-688A5A74B591}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug", "debug", "{DBC1EE60-A392-4373-991A-007797719D1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wallet", "wallet", "{33E045BD-94C5-451A-BAF9-54CB8483B9BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mining", "mining", "{186FD179-575D-42F9-8579-693AE4751D54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{50CF2740-A840-46E5-BA6A-FD6912F05527}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{475D8823-FBE4-4C87-9312-13FD3F99CE2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Debug.Api", "debug\DinkumCoin.Debug.Api\DinkumCoin.Debug.Api.csproj", "{69E358BA-2C39-4C6E-868C-85FAF4D6A717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Blockchain.Data", "blockchain\DinkumCoin.Blockchain.Data\DinkumCoin.Blockchain.Data.csproj", "{E1C4083D-45AB-42C3-92DD-3DEE9344A611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Blockchain.Core", "blockchain\DinkumCoin.Blockchain.Core\DinkumCoin.Blockchain.Core.csproj", "{772AA28D-3159-4EBB-B022-5C13A55278DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Blockchain.Api", "blockchain\DinkumCoin.Blockchain.Api\DinkumCoin.Blockchain.Api.csproj", "{39B28A42-5053-4F8B-AFE2-0BF553FFB40B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.MiningService", "mining\DinkumCoin.MiningService\DinkumCoin.MiningService.csproj", "{8FB24853-4D6D-4641-9717-C1B842490B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Wallet.Api", "wallet\DinkumCoin.Wallet.Api\DinkumCoin.Wallet.Api.csproj", "{CDC4A2AC-723A-4702-A557-E483E824818B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Infrastructure", "infrastructure\DinkumCoin.Infrastructure\DinkumCoin.Infrastructure.csproj", "{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Domain", "domain\DinkumCoin.Domain\DinkumCoin.Domain.csproj", "{50988072-B58B-471B-83C7-F8420504ABE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Mining.Core", "mining\DinkumCoin.Mining.Core\DinkumCoin.Mining.Core.csproj", "{2A518D2A-C44A-4C6F-A29A-B3635EB9F344}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Mining.Data", "mining\DinkumCoin.Mining.Data\DinkumCoin.Mining.Data.csproj", "{83613CF0-FFFA-4CA5-B227-10DBA5B0DD3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solution", "_solution", "{AFF95A7F-6D86-4B46-B52E-0B5BEBAD4CA7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		ReadMe.md = ReadMe.md
+		notes.txt = notes.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinkumCoin.Mining.UnitTests", "mining\DinkumCoin.Mining.UnitTests\DinkumCoin.Mining.UnitTests.csproj", "{883B476E-B404-4D57-B089-B32B5833A6DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69E358BA-2C39-4C6E-868C-85FAF4D6A717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E358BA-2C39-4C6E-868C-85FAF4D6A717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E358BA-2C39-4C6E-868C-85FAF4D6A717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E358BA-2C39-4C6E-868C-85FAF4D6A717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B28A42-5053-4F8B-AFE2-0BF553FFB40B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B28A42-5053-4F8B-AFE2-0BF553FFB40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B28A42-5053-4F8B-AFE2-0BF553FFB40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B28A42-5053-4F8B-AFE2-0BF553FFB40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB24853-4D6D-4641-9717-C1B842490B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB24853-4D6D-4641-9717-C1B842490B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB24853-4D6D-4641-9717-C1B842490B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB24853-4D6D-4641-9717-C1B842490B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC4A2AC-723A-4702-A557-E483E824818B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC4A2AC-723A-4702-A557-E483E824818B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC4A2AC-723A-4702-A557-E483E824818B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC4A2AC-723A-4702-A557-E483E824818B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50988072-B58B-471B-83C7-F8420504ABE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50988072-B58B-471B-83C7-F8420504ABE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50988072-B58B-471B-83C7-F8420504ABE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50988072-B58B-471B-83C7-F8420504ABE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C4083D-45AB-42C3-92DD-3DEE9344A611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C4083D-45AB-42C3-92DD-3DEE9344A611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C4083D-45AB-42C3-92DD-3DEE9344A611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C4083D-45AB-42C3-92DD-3DEE9344A611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772AA28D-3159-4EBB-B022-5C13A55278DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772AA28D-3159-4EBB-B022-5C13A55278DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772AA28D-3159-4EBB-B022-5C13A55278DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772AA28D-3159-4EBB-B022-5C13A55278DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A518D2A-C44A-4C6F-A29A-B3635EB9F344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A518D2A-C44A-4C6F-A29A-B3635EB9F344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A518D2A-C44A-4C6F-A29A-B3635EB9F344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A518D2A-C44A-4C6F-A29A-B3635EB9F344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883B476E-B404-4D57-B089-B32B5833A6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883B476E-B404-4D57-B089-B32B5833A6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883B476E-B404-4D57-B089-B32B5833A6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883B476E-B404-4D57-B089-B32B5833A6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83613CF0-FFFA-4CA5-B227-10DBA5B0DD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83613CF0-FFFA-4CA5-B227-10DBA5B0DD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BFB3EB9-4DA1-4D24-980B-FC9F0969E928}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69E358BA-2C39-4C6E-868C-85FAF4D6A717} = {DBC1EE60-A392-4373-991A-007797719D1F}
+		{39B28A42-5053-4F8B-AFE2-0BF553FFB40B} = {8CDEEC65-96F9-4FCA-8AD1-688A5A74B591}
+		{8FB24853-4D6D-4641-9717-C1B842490B82} = {186FD179-575D-42F9-8579-693AE4751D54}
+		{CDC4A2AC-723A-4702-A557-E483E824818B} = {33E045BD-94C5-451A-BAF9-54CB8483B9BE}
+		{825E2B5A-CE01-4AAC-9D50-E4EBCC99AB96} = {475D8823-FBE4-4C87-9312-13FD3F99CE2F}
+		{50988072-B58B-471B-83C7-F8420504ABE5} = {50CF2740-A840-46E5-BA6A-FD6912F05527}
+		{E1C4083D-45AB-42C3-92DD-3DEE9344A611} = {8CDEEC65-96F9-4FCA-8AD1-688A5A74B591}
+		{772AA28D-3159-4EBB-B022-5C13A55278DE} = {8CDEEC65-96F9-4FCA-8AD1-688A5A74B591}
+		{2A518D2A-C44A-4C6F-A29A-B3635EB9F344} = {186FD179-575D-42F9-8579-693AE4751D54}
+		{83613CF0-FFFA-4CA5-B227-10DBA5B0DD3C} = {186FD179-575D-42F9-8579-693AE4751D54}
+		{883B476E-B404-4D57-B089-B32B5833A6DE} = {186FD179-575D-42F9-8579-693AE4751D54}
+	EndGlobalSection
+EndGlobal

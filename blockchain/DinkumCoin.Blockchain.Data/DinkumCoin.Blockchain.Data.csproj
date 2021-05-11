@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Mappers\" />
+    <Folder Include="Clients\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DinkumCoin.Blockchain.Core\DinkumCoin.Blockchain.Core.csproj" />
+  </ItemGroup>
+</Project>
