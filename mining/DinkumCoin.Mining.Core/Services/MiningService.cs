@@ -51,7 +51,7 @@ namespace DinkumCoin.Mining.Core.Services
                 if (currentTask == null || currentTask.Status != MiningTaskStatus.Active)
                 {
                     _logger.LogInformation("Mining service checking for any mineable transactions");
-                    var unverified = await _miningRepository.GetUniverifiedTransactions();
+                    var unverified = await _miningRepository.GetUnverifiedTransactions();
 
                     if (unverified.Any())
                     {
@@ -82,15 +82,19 @@ namespace DinkumCoin.Mining.Core.Services
                                 _logger.LogInformation("Solution calculated for block {id} in {durationMS} ms", currentProof.Index, timer.ElapsedMilliseconds);
                                 await HandleMiningSolutionFound(miningTask, calculatedSolution);
                             }
-                            catch (TaskCanceledException)
+                            catch (OperationCanceledException)
                             {
                                 _logger.LogInformation("Mining solution for block {id} cancelled after {durationMS} ms", currentProof.Index, timer.ElapsedMilliseconds);
                                 await HandleMiningCanceled(miningTask);
                             }
                         }
                     }
+                    _logger.LogInformation("No mineable transactions found, will check again in {interval} ms", PollIntervalMS);
                 }
-                _logger.LogInformation("No mineable transactions found, will check again in {interval} ms", PollIntervalMS);
+                else
+                {
+                    _logger.LogInformation("existing mining task in progress, will check again in {interval} ms", PollIntervalMS);
+                }
                 await Task.Delay(PollIntervalMS);
             }
         }
@@ -98,7 +102,7 @@ namespace DinkumCoin.Mining.Core.Services
         private async Task HandleMiningSolutionFound(MiningTask miningTask, long calculatedSolution)
         {
             // retrieve up to date list of unverified transactions
-            var unverified = await _miningRepository.GetUniverifiedTransactions();
+            var unverified = await _miningRepository.GetUnverifiedTransactions();
 
             var solutionAttempt = new SolutionAttempt
             {
@@ -106,20 +110,27 @@ namespace DinkumCoin.Mining.Core.Services
                 Proof = calculatedSolution,
                 Transactions = unverified.Select(i => TransactionMapper.From(i)).ToList()
             };
+
             miningTask.EndTime = DateTime.UtcNow;
             miningTask.Status = MiningTaskStatus.Complete;
             miningTask.Solution = calculatedSolution.ToString();
-            await _miningRepository.UpdateMiningTask(miningTask);
 
-            await _miningRepository.UpdateMiningTask(miningTask);
+            List<Task> tasks = new List<Task>
+            {
+                _miningRepository.UpdateMiningTask(miningTask),
+                _miningRepository.UpdateTransactionsToVerified(),
+                _apiClient.SubmitSolution(solutionAttempt)
+            };
 
-            await _apiClient.SubmitSolution(solutionAttempt);
+            await Task.WhenAll(tasks);
+
             _logger.LogInformation("Solution submitted {solution}", solutionAttempt);
 
         }
 
         private async Task HandleMiningCanceled(MiningTask miningTask)
         {
+
             miningTask.EndTime = DateTime.UtcNow;
             miningTask.Status = MiningTaskStatus.Cancelled;
             await _miningRepository.UpdateMiningTask(miningTask);

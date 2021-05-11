@@ -18,6 +18,7 @@ namespace DinkumCoin.Mining.Core.Services
 
         public CancellationToken New()
         {
+            _cts = new CancellationTokenSource();
             return _cts.Token;
         }
     }

@@ -92,8 +92,6 @@ namespace DinkumCoin.Blockchain.Api
                 opts.GetLevel = LogHelpers.ExcludeHealthChecks; // Use the custom level
             });
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();

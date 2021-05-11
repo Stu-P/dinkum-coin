@@ -73,15 +73,13 @@ namespace DinkumCoin.MiningService
                      .AddScoped<IProofOfWorkCalculator, ProofOfWorkCalculator>()
                      .AddScoped<BlockCreatedEventHandler>()
                      .AddScoped<TransactionCreatedEventHandler>()
-                     .AddScoped<TransactionVerifiedEventHandler>()
-                     .AddScoped<ICancelTokenProvider, MiningCancelTokenProvider>()
+                     .AddSingleton<ICancelTokenProvider, MiningCancelTokenProvider>()
                      .AddSingleton<MessageDelegator>()
                      .AddSingleton(provider =>
                      {
                          var manager = new EventSubscriptionManager();
                          manager.AddSubscription<BlockCreatedEvent, BlockCreatedEventHandler>(Constants.BlockCreatedEventName);
                          manager.AddSubscription<TransactionCreatedEvent, TransactionCreatedEventHandler>(Constants.TransactionCreatedEventName);
-                         manager.AddSubscription<TransactionVerifiedEvent, TransactionVerifiedEventHandler>(Constants.TransactionVerifiedEventName);
                          return manager;
                      });
 
